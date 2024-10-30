@@ -69,8 +69,8 @@ function generateAcronym(sentence) {
         .map(word => word[0].toUpperCase())
         .join("");
 }
-
-
+//https://dev.to/codewithshan/create-a-javascript-tool-to-generate-acronym-from-user-input-2ib7
+//https://github.com/EQuimper/CodeChallenge/blob/master/javascript/FreeCodeCamps/Basic%20JavaScript/Find%20Numbers%20with%20Regular%20Expressions.md
 
 /**
  * This function counts consonants in a string, with lowercase counting as 1 and uppercase as 2.
