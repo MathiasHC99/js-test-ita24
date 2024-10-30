@@ -10,9 +10,12 @@
  */
 
 function isEven(number) {
-
+if (number%2 == 0)
+    return true;
+else
+    return false;
 }
-
+// https://stackoverflow.com/questions/5016313/how-to-determine-if-a-number-is-odd-in-javascript
 /**
  * This function checks if a number is within a range.
  *
@@ -27,7 +30,7 @@ function isEven(number) {
  */
 
 function isWithinRange(n, min, max) {
-
+return n >= min && n <= max;
 }
 
 /**
@@ -43,7 +46,7 @@ function isWithinRange(n, min, max) {
  */
 
 function stringContainsBa(string) {
-
+return string.includes("ba")
 }
 
 
@@ -57,9 +60,13 @@ function stringContainsBa(string) {
  * const result = sumOfDigitsWithPosition(1234); // result will be 1^1 + 2^2 + 3^3 + 4^4 = (1) + (2 * 2) + (3 * 3 * 3) + (4 * 4 * 4 * 4) =  1 + 4 + 27 + 256 = 288
  * const result = sumOfDigitsWithPosition(52); // result will be 5^1 + 2^2 = 5 + (2 * 2) = 5 + 4 = 9
  */
-function sumOfDigitsWithPosition(num) {
 
+function sumOfDigitsWithPosition(num) {
+return num.toString().split("")
+    .reduce((sum,digit) =>
+        sum + parseInt(digit),0);
 }
+
 
 
 

@@ -9,7 +9,9 @@
  * const message = generateMessage("Jack", 25); // "Hey Jack, happy 25 birthday!"
  */
 function generateMessage(name, age) {
+const message = `Hey ${name}, happy ${age} birthday!`
 
+    return message;
 }
 
 /**
@@ -21,9 +23,15 @@ function generateMessage(name, age) {
  * Usage:
  * const title = titleCase("hello world"); // title will be "Hello World"
  */
-function titleCase(sentence) {
 
+function titleCase(sentence) {
+return sentence
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 }
+
+const title = titleCase("hello world");
 
 /**
  * This function returns the sum of a range of numbers in an array.
@@ -36,7 +44,11 @@ function titleCase(sentence) {
  * const sum = sumOfRange(1, 4); // sum will be 10
  */
 function sumOfRange(start, end) {
-
+let sum = 0;
+for (let i = start; i <= end; i++) {
+    sum +=i;
+}
+return sum;
 }
 
 
@@ -51,8 +63,13 @@ function sumOfRange(start, end) {
  * const anotherAcronym = generateAcronym("Federal Bureau Investigation"); // anotherAcronym will be "FBI"
  */
 function generateAcronym(sentence) {
-
+    return sentence
+        .split(" ")
+        .filter(word => !/\d/.test(word))
+        .map(word => word[0].toUpperCase())
+        .join("");
 }
+
 
 
 /**
@@ -66,5 +83,18 @@ function generateAcronym(sentence) {
  * const anotherCount = countConsonantsWeighted("JavaScript"); // anotherCount will be 9
  */
 function countConsonantsWeighted(str) {
+    const consonants = new Set('bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ');
 
+    return str.split('').reduce((count, char) => {
+        if (consonants.has(char)) {
+            // Add 2 for uppercase consonants, 1 for lowercase
+            return count + (char === char.toUpperCase() ? 2 : 1);
+        }
+        return count;
+    }, 0);
 }
+//https://www.geeksforgeeks.org/find-number-of-consonants-in-a-string-using-javascript/
+/*
+bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ
+aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTvVwWxXyYzZ
+*/

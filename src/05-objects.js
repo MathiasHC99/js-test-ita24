@@ -8,7 +8,12 @@
  * // person might be { name: 'John Doe', age: 30, city: 'New York' }
  */
 function createPersonObject() {
-
+const person = {
+    name: 'John Doe',
+    age: 30,
+    city: 'New York'
+};
+return person
 }
 
 
@@ -23,7 +28,7 @@ function createPersonObject() {
  * // personName will be 'John Doe'
  */
 function getPersonName(person) {
-
+return person.name;
 }
 
 
@@ -40,9 +45,10 @@ function getPersonName(person) {
  *
  */
 function findPersonByName(persons, name) {
-
+const person = persons.find((person) => person.name === name);
+    return person || null;
 }
-
+// ????????
 
 /**
  * This function calculates the total age of all persons in an array.
@@ -55,7 +61,11 @@ function findPersonByName(persons, name) {
  * // totalAge will be 55
  */
 function getTotalAge(persons) {
-
+let totalAge = 0;
+for (const person of persons) {
+    totalAge += person.age;
+}
+return totalAge;
 }
 
 
@@ -74,5 +84,16 @@ function getTotalAge(persons) {
  * const hasDuplicates = checkForDuplicateEmails(users); // true
  */
 function checkForDuplicateEmails(users) {
+    let i = users.length, j, val;
 
-}
+    while (i--) {
+        j = i;
+        while (j--) {
+            if (users[j]===val) {
+                return true;
+            }
+        }
+    }
+    return false;
+ }
+//https://stackoverflow.com/questions/1564700/fastest-way-to-detect-if-duplicate-entry-exists-in-javascript-array
