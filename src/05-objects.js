@@ -46,7 +46,7 @@ return person.name;
  */
 function findPersonByName(persons, name) {
 const person = persons.find((person) => person.name === name);
-    return person || null;
+    return person;
 }
 // ????????
 
